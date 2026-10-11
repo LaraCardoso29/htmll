@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica & O Futuro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinkish: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Custom animations for the robot mascot */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
+        .robot-eye {
+            animation: blink 4s infinite;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body class="bg-pinkish-50 text-slate-800 antialiased selection:bg-pinkish-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-pinkish-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pinkish-600 to-pinkish-400 flex items-center justify-center text-white shadow-md shadow-pinkish-500/30">
+                    <i class="fa-solid fa-robot text-xl"></i>
+                </div>
+                <span class="orbitron text-xl font-bold bg-gradient-to-r from-pinkish-700 to-pinkish-500 bg-clip-text text-transparent">RoboPink</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600">
+                <a href="#inicio" class="hover:text-pinkish-600 transition-colors">Início</a>
+                <a href="#areas" class="hover:text-pinkish-600 transition-colors">Áreas da Robótica</a>
+                <a href="#curiosidades" class="hover:text-pinkish-600 transition-colors">Curiosidades</a>
+                <a href="#interativo" class="hover:text-pinkish-600 transition-colors">Fale com o Robô</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#interativo" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-pinkish-600 text-white font-medium shadow-lg shadow-pinkish-600/30 hover:bg-pinkish-700 transition-all transform hover:-translate-y-0.5">
+                    Explorar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-pinkish-100 text-pinkish-700 text-sm font-semibold">
+                            <i class="fa-solid fa-sparkles"></i>
+                            <span>O Futuro é Agora</span>
+                        </div>
+                        <h1 class="orbitron text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                            Descubra o Mundo da <span class="text-pinkish-600">Robótica</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                            Explore as tecnologias que estão transformando o nosso planeta, desde a inteligência artificial até a exploração espacial e medicina avançada.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#areas" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-pinkish-600 text-white font-semibold shadow-lg shadow-pinkish-600/30 hover:bg-pinkish-700 transition-all text-center">
+                                Conhecer Áreas
+                            </a>
+                            <a href="#interativo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-pinkish-200 text-pinkish-700 font-semibold hover:bg-pinkish-50 transition-all text-center shadow-sm">
+                                Conhecer o Robô
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Robot Mascot Illustration -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center">
+                            <!-- Background Glowing Circle -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-pinkish-400 to-pinkish-200 rounded-full filter blur-2xl opacity-40 animate-pulse"></div>
+                            
+                            <!-- SVG Robot Mascot -->
+                            <div class="relative z-10 animate-float cursor-pointer" id="robot-mascot" title="Clique em mim!">
+                                <svg class="w-64 h-64 sm:w-72 sm:h-72 drop-shadow-2xl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Antenna -->
+                                    <line x1="100" y1="50" x2="100" y2="25" stroke="#be185d" stroke-width="4" stroke-linecap="round"/>
+                                    <circle cx="100" cy="20" r="8" fill="#ec4899" class="animate-ping" style="animation-duration: 3s;" />
+                                    <circle cx="100" cy="20" r="6" fill="#ec4899" />
+                                    
+                                    <!-- Head -->
+                                    <rect x="60" y="50" width="80" height="65" rx="16" fill="white" stroke="#be185d" stroke-width="4"/>
+                                    <rect x="72" y="62" width="56" height="38" rx="8" fill="#fdf2f8"/>
+                                    
+                                    <!-- Eyes -->
+                                    <circle class="robot-eye" cx="88" cy="81" r="7" fill="#be185d"/>
+                                    <circle class="robot-eye" cx="112" cy="81" r="7" fill="#be185d"/>
+                                    <circle cx="90" cy="79" r="2" fill="white"/>
+                                    <circle cx="114" cy="79" r="2" fill="white"/>
+                                    
+                                    <!-- Mouth/Smile -->
+                                    <path d="M 90 92 Q 100 100 110 92" stroke="#be185d" stroke-width="3" stroke-linecap="round"/>
+
+                                    <!-- Ears / Bolts -->
+                                    <rect x="50" y="72" width="10" height="15" rx="3" fill="#ec4899"/>
+                                    <rect x="140" y="72" width="10" height="15" rx="3" fill="#ec4899"/>
+
+                                    <!-- Body -->
+                                    <rect x="65" y="125" width="70" height="55" rx="12" fill="white" stroke="#be185d" stroke-width="4"/>
+                                    <!-- Heart screen on chest -->
+                                    <rect x="80" y="137" width="40" height="30" rx="6" fill="#fce7f3"/>
+                                    <path d="M100 159 C95 154 90 150 90 145 C90 142 92 140 95 140 C97 140 99 141 100 143 C101 141 103 140 105 140 C108 140 110 142 110 145 C110 150 105 154 100 159 Z" fill="#ec4899"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="areas" class="py-20 bg-white border-y border-pinkish-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="orbitron text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Áreas de Atuação da Robótica</h2>
+                    <p class="text-slate-600 text-lg">A robótica é multidisciplinar. Descubra onde ela é aplicada e revoluciona o cotidiano.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-pinkish-50/50 p-8 rounded-2xl border border-pinkish-100 hover:shadow-xl hover:shadow-pinkish-500/10 transition-all group">
+                        <div class="w-14 h-14 rounded-xl bg-pinkish-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-pinkish-600/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <h3 class="orbitron text-xl font-bold text-slate-900 mb-3">Robótica Industrial</h3>
+                        <p class="text-slate-600 leading-relaxed">Braços mecânicos e sistemas automatizados focados na linha de montagem, soldagem e fabricação em larga escala com precisão extrema.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-pinkish-50/50 p-8 rounded-2xl border border-pinkish-100 hover:shadow-xl hover:shadow-pinkish-500/10 transition-all group">
+                        <div class="w-14 h-14 rounded-xl bg-pinkish-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-pinkish-600/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="orbitron text-xl font-bold text-slate-900 mb-3">Robótica Médica</h3>
+                        <p class="text-slate-600 leading-relaxed">Cirurgias minimamente invasivas assistidas por robô (como o sistema Da Vinci), próteses biônicas e reabilitação de pacientes.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-pinkish-50/50 p-8 rounded-2xl border border-pinkish-100 hover:shadow-xl hover:shadow-pinkish-500/10 transition-all group">
+                        <div class="w-14 h-14 rounded-xl bg-pinkish-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-pinkish-600/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3 class="orbitron text-xl font-bold text-slate-900 mb-3">Robótica Espacial</h3>
+                        <p class="text-slate-600 leading-relaxed">Exploração de outros planetas com rovers (como Perseverance em Marte), sondas espaciais e manutenção de estações orbitais.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-pinkish-50/50 p-8 rounded-2xl border border-pinkish-100 hover:shadow-xl hover:shadow-pinkish-500/10 transition-all group">
+                        <div class="w-14 h-14 rounded-xl bg-pinkish-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-pinkish-600/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-house-laptop"></i>
+                        </div>
+                        <h3 class="orbitron text-xl font-bold text-slate-900 mb-3">Robótica Doméstica</h3>
+                        <p class="text-slate-600 leading-relaxed">Ajudantes inteligentes para o dia a dia, como aspiradores robô, gramados autônomos e assistentes de automação residencial.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-pinkish-50/50 p-8 rounded-2xl border border-pinkish-100 hover:shadow-xl hover:shadow-pinkish-500/10 transition-all group">
+                        <div class="w-14 h-14 rounded-xl bg-pinkish-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-pinkish-600/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-car-tunnel"></i>
+                        </div>
+                        <h3 class="orbitron text-xl font-bold text-slate-900 mb-3">Veículos Autônomos</h3>
+                        <p class="text-slate-600 leading-relaxed">Carros que dirigem sozinhos, drones de entrega e embarcações autônomas que utilizam visão computacional e sensores avançados.</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="bg-pinkish-50/50 p-8 rounded-2xl border border-pinkish-100 hover:shadow-xl hover:shadow-pinkish-500/10 transition-all group">
+                        <div class="w-14 h-14 rounded-xl bg-pinkish-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-pinkish-600/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="orbitron text-xl font-bold text-slate-900 mb-3">Robótica Educacional</h3>
+                        <p class="text-slate-600 leading-relaxed">Ferramentas pedagógicas com kits de montagem e programação para ensinar lógica, física e engenharia a estudantes de todas as idades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interativo" class="py-20 bg-pinkish-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl shadow-pinkish-500/10 border border-pinkish-100 text-center relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-pinkish-100 rounded-full filter blur-xl opacity-60"></div>
+                    
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-pinkish-100 text-pinkish-600 text-3xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <h2 class="orbitron text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Converse com o RoboPink</h2>
+                    <p class="text-slate-600 mb-8 max-w-lg mx-auto">Clique no botão abaixo para gerar uma dica robótica ou frase motivacional aleatória do nosso assistente!</p>
+
+                    <!-- Speech Bubble Output -->
+                    <div id="speech-bubble" class="bg-pinkish-50 border border-pinkish-200 rounded-2xl p-6 text-pinkish-900 font-medium text-lg mb-8 min-h-[90px] flex items-center justify-center shadow-inner transition-all">
+                        "Olá! Clique no botão abaixo para iniciar nossa conversa cibernética. 🤖✨"
+                    </div>
+
+                    <button id="talk-btn" class="px-8 py-4 rounded-xl bg-pinkish-600 text-white font-semibold shadow-lg shadow-pinkish-600/30 hover:bg-pinkish-700 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Gerar Frase do Robô</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="curiosidades" class="py-20 bg-white border-t border-pinkish-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="orbitron text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Você sabia?</h2>
+                    <p class="text-slate-600 text-lg">Curiosidades fascinantes sobre o universo dos autômatos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-2xl bg-pinkish-50/60 border border-pinkish-100">
+                        <div class="text-pinkish-600 font-bold text-xl mb-2 flex items-center space-x-2">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span>A Origem da Palavra</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">A palavra "robô" vem do termo tcheco *robota*, que significa trabalho forçado ou servidão, aparecendo pela primeira vez em uma peça de teatro em 1920.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-pinkish-50/60 border border-pinkish-100">
+                        <div class="text-pinkish-600 font-bold text-xl mb-2 flex items-center space-x-2">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Primeiro Robô Industrial</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">Chamado de Unimate, o primeiro robô industrial entrou em operação em 1961 em uma fábrica da General Motors para manipular peças metálicas quentes.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-pinkish-50/60 border border-pinkish-100">
+                        <div class="text-pinkish-600 font-bold text-xl mb-2 flex items-center space-x-2">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>Inteligência em Marte</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">Os rovers em Marte precisam tomar decisões autônomas porque o sinal de rádio leva minutos para viajar entre a Terra e o planeta vermelho!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-pinkish-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <span class="orbitron font-bold tracking-wider">ROBOPINK</span>
+            </div>
+            <p class="text-slate-400 text-sm text-center">Feito com carinho e tecnologia moderna inspirada no universo robótico. © 2026</p>
+            <div class="flex space-x-4 text-slate-400">
+                <a href="#inicio" class="hover:text-pinkish-500 transition-colors"><i class="fa-solid fa-arrow-up"></i> Topo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Array of robot quotes/messages
+        const robotQuotes = [
+            "Bip-bop! A robótica combina mecânica, eletrônica e programação para criar o impossível! 🤖⚡",
+            "Você sabia que programar é dar superpoderes lógicos para as máquinas? Vamos codar! 💻✨",
+            "Cuidado para não tropeçar em nenhum fio enquanto explora o universo tecnológico! 🚀",
+            "Sistemas operando em capacidade máxima! O futuro da medicina e do espaço depende de mentes criativas como a sua! 💖",
+            "Erro 404: Limites não encontrados! A criatividade humana junto à robótica não tem barreiras. 🌟",
+            "Um salve para todos os futuros engenheiros e cientistas que estão navegando por aqui hoje! 🦾🎉"
+        ];
+
+        const talkBtn = document.getElementById('talk-btn');
+        const speechBubble = document.getElementById('speech-bubble');
+        const robotMascot = document.getElementById('robot-mascot');
+
+        function triggerRobotSpeech() {
+            // Pick a random quote
+            const randomIndex = Math.floor(Math.random() * robotQuotes.length);
+            speechBubble.style.opacity = '0';
+            setTimeout(() => {
+                speechBubble.textContent = `"${robotQuotes[randomIndex]}"`;
+                speechBubble.style.opacity = '1';
+            }, 150);
+        }
+
+        talkBtn.addEventListener('click', triggerRobotSpeech);
+        robotMascot.addEventListener('click', triggerRobotSpeech);
+    </script>
+</body>
+</html>
